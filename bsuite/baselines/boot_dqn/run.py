@@ -30,6 +30,11 @@ from bsuite.baselines.utils import pool
 import tensorflow as tf
 from typing import Text
 
+# suppress annoying warning
+import os
+os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2'
+tf.logging.set_verbosity(tf.logging.ERROR)
+
 # bsuite logging
 flags.DEFINE_string('bsuite_id', 'catch/0',
                     'specify either a single bsuite_id (e.g. catch/0)\n'
